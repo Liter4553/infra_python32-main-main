@@ -2,9 +2,6 @@ import os
 import requests
 from dotenv import load_dotenv
 
-print(requests)
-
-
 load_dotenv()
 
 NOTION_TOKEN = os.getenv('NOTION_API_KEY')
@@ -27,7 +24,7 @@ try :
     response = requests.post(url, headers=headers, timeout=10)
     response.raise_for_status()
 
-    data = response.json
+    data = response.json()
     print(data)
 
 except Exception as e:
