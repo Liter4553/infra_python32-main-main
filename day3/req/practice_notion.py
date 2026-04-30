@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 NOTION_TOKEN = os.getenv('NOTION_API_KEY')
-NOTION_DB = os.getenv('DATABASE_ID')
+DB_ID = os.getenv('DATABASE_ID')
 
-if not NOTION_TOKEN or not NOTION_DB :
+if not NOTION_TOKEN or not DB_ID :
     raise ValueError('.env 값 없엉 oTL')
 
-url = f"https://api.notion.com/v1/databases/{NOTION_DB}/query"
+url = f"https://api.notion.com/v1/databases/{DB_ID}/query"
 
 # 헤더 설정
 headers = {
